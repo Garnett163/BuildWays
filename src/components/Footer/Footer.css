@@ -1,0 +1,40 @@
+.footer {
+  background-color: #212526;
+  color: #fff;
+}
+
+.footer__container {
+  margin: 0 auto;
+  padding: 30px 30px;
+  gap: 30px;
+  max-width: 1300px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footer__contact-link {
+  text-decoration: none;
+  color: #fff;
+}
+
+.footer__contact-link:hover {
+  opacity: 0.7;
+}
+
+.footer__logo {
+  margin-right: auto;
+}
+
+@media screen and (max-width: 700px) {
+  .footer__container {
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .footer__container {
+    padding: 0 15px;
+    gap: 20px;
+  }
+}
