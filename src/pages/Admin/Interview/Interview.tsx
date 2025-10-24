@@ -45,9 +45,38 @@ function Interview() {
           установленным флагом ACK. Это подтверждает серверу, что клиент получил его подтверждение, и теперь соединение
           установлено.
         </li>
+        <li className="interview__item">
+          <span className="interview__item_number">5)</span> Защита от XXS(Cross-site scripting) - автоматическое
+          экранирование во фрейморках. Для textarea вручную экранировать <br /> CSRF (Cross-Site Request Forgery) -
+          добавить токен/куки к запросам. <br />
+          SSTI (Server-Side Template Injection) - блокировка шаблонных сиктаксисов. <br /> XXE (XML External Entity) -
+          это уязвимость, которая позволяет атаковать приложения, обрабатывающие XML данные. Атака происходит через
+          внедрение вредоносных внешних сущностей в XML документы. <br /> LFI (Local File Inclusion) - это уязвимость,
+          позволяющая злоумышленнику читать локальные файлы на сервере через веб-приложение. <br /> RCE (Remote Code
+          Execution) - это удаленное выполнение кода на сервере. Это одна из самых опасных атак. <br /> RFI (Remote File
+          Inclusion) - это удаленное включение файлов, когда атакующий заставляет приложение загружать и выполнять файлы
+          с удаленных серверов.
+        </li>
+      </ul>
+      <h2>Вопросы по HTML/CSS</h2>
+      <ul className="interview__list">
+        <li className="interview__item">
+          <span className="interview__item_number">1)</span>
+        </li>
       </ul>
       <h2>Вопросы по JS</h2>
       <ul className="interview__list">
+        <li className="interview__item">
+          <span className="interview__item_number">1)</span> Примитивы: null, undefined, boolean, number, string,
+          symbol, bigInt. Symbol - уникальный объект, который используется для создания уникальных идентификаторов.
+          BigInt - позволяет безопасно работать с большими числами, нельзя смешивать с number, поддерживает только
+          целочисленные операции.
+        </li>
+        <li className="interview__item">
+          <span className="interview__item_number">2)</span> Prototype - Есть только у функций-конструкторов и классов,
+          хранит методы и свойства для наследования, используется для создания через new. __proto__ - есть у всех
+          объектов и хранит методы и свойства для наследования. Object.getPrototypeOf() - возвращает прототип объекта.
+        </li>
         <li className="interview__item">
           <span className="interview__item_number">1)</span> Замыкание - Функция сохраняет доступ к переменным из своего
           внешнего контекста, даже после завершения выполнения этого контекста. Замыкания часто используются для
@@ -144,6 +173,9 @@ function Interview() {
           Promise, который разрешается, когда хотя бы один из переданных промисов разрешается, или отклоняется, если все
           промисы отклоняются.
         </li>
+        <li className="interview__item">
+          <span className="interview__item_number">15)</span>
+        </li>
       </ul>
       <h2>Вопросы по TypeScript</h2>
       <ul className="interview__list">
@@ -175,6 +207,11 @@ function Interview() {
         </li>
         <li className="interview__item">
           <span className="interview__item_number">7)</span>
+          TypeGuard - это функция которая возвращает true или false в зависимости от проверки типа. Имеет специальный
+          тип возврата value is Type
+        </li>
+        <li className="interview__item">
+          <span className="interview__item_number">8)</span>
           Utility Types: ----
           <br></br>
           Partial(Type) Создает тип, который делает все свойства указанного типа необязательными, помечая их как ?.
@@ -223,11 +260,11 @@ function Interview() {
           изменении. С ключами React понимает, какой именно элемент изменился, и обновляет только его.
         </li>
         <li className="interview__item">
-          <span className="interview__item_number">1)</span> Fiber - когда у нас впервые строится дерево реакт
+          <span className="interview__item_number">5)</span> Fiber - когда у нас впервые строится дерево реакт
           элементов, то для каждого элемента впервые создается Fiber Noda
         </li>
         <li className="interview__item">
-          <span className="interview__item_number">2)</span> Эвристика в React - алгоритмы которые строят в начале
+          <span className="interview__item_number">6)</span> Эвристика в React - алгоритмы которые строят в начале
           CurrentTree а потом переходят в WorkInProgressTree имеют в среднем сложность O(n3). Поэтому есть 2 правила 1)
           Элементы разных типов - разные деревья, принцип в кратце, что React удаляет компоненты и строит их заного а
           просто пересоздает их. 2) Можно использовать key, чтобы пометить какие элементы будут стабильны в разных
@@ -236,29 +273,29 @@ function Interview() {
           За счет этих правил сложность O(n)
         </li>
         <li className="interview__item">
-          <span className="interview__item_number">3)</span> Оптимизация в React(кеширование)-
+          <span className="interview__item_number">7)</span> Оптимизация в React(кеширование)-
         </li>
         <li className="interview__item">
-          <span className="interview__item_number">4)</span> Расскажи про хуки в React
+          <span className="interview__item_number">8)</span> Расскажи про хуки в React
           <br />
           useEffect это хук в React, который предназначен для выполнения side-эффектов в функциональных компонентах.
           Side-эффекты могут быть, например, выполнение запросов HTTP, изменение состояний компонента или обновление
           DOM-элементов.
         </li>
         <li className="interview__item">
-          <span className="interview__item_number">5)</span> useRef - Предназначен для сохранения и взаимодействия с
+          <span className="interview__item_number">9)</span> useRef - Предназначен для сохранения и взаимодействия с
           изменяемыми значениями, которые не вызывают перерендеринг компонента.Хранение мутабельных значений: Вы можете
           использовать useRef для хранения переменных, которые не приводят к повторному рендерингу компонента. Часто
           используется для сохранения ссылок на DOM-элементы.
         </li>
         <li className="interview__item">
-          <span className="interview__item_number">5)</span> useEffect - это хук в React, который предназначен для
+          <span className="interview__item_number">10)</span> useEffect - это хук в React, который предназначен для
           выполнения side-эффектов в функциональных компонентах. Side-эффекты могут быть, например, выполнение запросов
           к серверу, манипуляции с DOM, подписка на события или любые другие операции, которые необходимо выполнить в
           процессе жизненного цикла компонента.
         </li>
         <li className="interview__item">
-          <span className="interview__item_number">6)</span> uselayoutEffect - Cрабатывает синхронно после всех
+          <span className="interview__item_number">11)</span> uselayoutEffect - Cрабатывает синхронно после всех
           изменений в DOM и перед тем, как браузер выполнит перерисовку экрана.
         </li>
       </ul>
@@ -309,6 +346,48 @@ function Interview() {
           кэшируются.Синхронные. <br />
           Watch - наблюдатель, который следит за изменением свойств. Могут быть асинхронные + не кешируются.
           Используются для сайд эффектов(подписки, таймеры, асихронные запросы)
+        </li>
+        <li className="interview__item">
+          <span className="interview__item_number">7)</span>
+          Mixins позволяют выносить общую функциональность (data, methods, computed, хуки жизненного цикла) в отдельные
+          объекты и подключать их к компонентам. Сначала отработают жизненные циклы миксинов в последовательности
+          подключения, а потом уже самого компонента
+        </li>
+        <li className="interview__item">
+          <span className="interview__item_number">8)</span>
+          Модификаторы для событий @click.stop, @click.prevent, @click.capture - обработчик на фазе перехвата,
+          @click.self - срабатывает только при клике на сам элемент, @click.once, @scroll.passive - улучшает
+          производительность
+        </li>
+        <li className="interview__item">
+          <span className="interview__item_number">9)</span>
+          Prevent и inject - обеспечивают возможность передачи данных из родительского компонента в дочерний.
+        </li>
+        <li className="interview__item">
+          <span className="interview__item_number">10)</span>
+          Динамические компоненты (:is) — это механизм Vue для рендеринга разных компонентов в одном месте на основе
+          динамического значения. По умолчанию при переключении компонент пересоздается, теряя состояние.
+        </li>
+        <li className="interview__item">
+          <span className="interview__item_number">11)</span>
+          Keep alive - при переключении компонентов сохраняет состояние.
+        </li>
+        <li className="interview__item">
+          <span className="interview__item_number">12)</span>
+          Suspense — это как "обертка-защита" для компонентов, которым нужно время чтобы "загрузиться". Он показывает
+          fallback (запасной контент) пока дочерние компоненты не закончат свои асинхронные операции. Не нужно ручное
+          управление флагами loading/error
+        </li>
+        <li className="interview__item">
+          <span className="interview__item_number">13)</span>
+          defineAsyncComponent - для ленивой загрузки компонентов, есть delay(задержка перед показом loading) и
+          timeout(таймаут загрузки)
+        </li>
+        <li className="interview__item">
+          <span className="interview__item_number">14)</span>
+          Глобальные хуки - router.beforeEach - Выполняется ПЕРЕД каждым переходом, router.afterEach - ПОСЛЕ каждого
+          перехода, router.onError - при ошибке <br />
+          Хуки навигации: beforeRouteEnter, beforeRouteUpdate, beforeRouteLeave
         </li>
       </ul>
     </section>
