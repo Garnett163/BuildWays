@@ -316,6 +316,16 @@ function Interview() {
         </li>
         <li className="interview__item">
           <span className="interview__item_number">3)</span>
+          ref глубокая реактивность с ключевым словом .value; shallowRef - поверхностная реактивность (на векрхнем
+          уровне), reactive работает только с объектами/массивами
+        </li>
+        <li className="interview__item">
+          <span className="interview__item_number">4)</span>
+          nextTick — это функция, которая позволяет отложить выполнение кода до следующего цикла обновления DOM. Пример
+          поставить фокус на элемент или в тестах
+        </li>
+        <li className="interview__item">
+          <span className="interview__item_number">3)</span>
           v-model — это директива для двустороннего связывания данных (two-way binding) между формой ввода и данными
           компонента. Синтаксический сахар для :value + @input="message = $event.target.value".
         </li>
@@ -329,7 +339,8 @@ function Interview() {
           <br /> v-for - Директива для рендеринга элементов списка.
           <br /> v-bind - Директива для привязки атрибутов HTML к компоненту. Привязка всех свойств объекта и пропсов.
           Передача пропсов в дочерние компоненты
-          <br /> v-slot - Директива для рендеринга содержимого слота внутри компонента.
+          <br /> v-slot - Директива для рендеринга содержимого слота внутри компонента. Можно именовать слоты. Слоты с
+          данными когда дочерний компонент передает данные обратно в слот, а родитель решает, как их отрендерить.
           <br />
           v-memo - Директива для оптимизации рендеринга компонента.
         </li>
@@ -344,8 +355,12 @@ function Interview() {
           <span className="interview__item_number">6)</span>
           Computed - вычисляемые свойства, которые вычисляются на основе других свойств. Возвращают значения,
           кэшируются.Синхронные. <br />
-          Watch - наблюдатель, который следит за изменением свойств. Могут быть асинхронные + не кешируются.
-          Используются для сайд эффектов(подписки, таймеры, асихронные запросы)
+          Watch - наблюдатель, который следит за изменением свойств. Ленивый — не выполняется сразу, если не указать
+          immediate: true. Глубокое отслеживание deep. Могут быть асинхронные + не кешируются. Используются для сайд
+          эффектов(подписки, таймеры, асихронные запросы)
+          <br /> WatchEffect - Выполнение побочного эффекта, который автоматически отслеживает все реактивные
+          зависимости, использованные внутри. Выполняется немедленно как immediate: true. Не дает старое значение —
+          только новое. Подходит для эффектов, где нужно "следить за всем, глубоко, что используется"
         </li>
         <li className="interview__item">
           <span className="interview__item_number">7)</span>
@@ -361,7 +376,8 @@ function Interview() {
         </li>
         <li className="interview__item">
           <span className="interview__item_number">9)</span>
-          Prevent и inject - обеспечивают возможность передачи данных из родительского компонента в дочерний.
+          Prevent и inject - обеспечивают возможность передачи данных из родительского компонента в дочерний. Это
+          реактовский useContext
         </li>
         <li className="interview__item">
           <span className="interview__item_number">10)</span>
@@ -388,6 +404,16 @@ function Interview() {
           Глобальные хуки - router.beforeEach - Выполняется ПЕРЕД каждым переходом, router.afterEach - ПОСЛЕ каждого
           перехода, router.onError - при ошибке <br />
           Хуки навигации: beforeRouteEnter, beforeRouteUpdate, beforeRouteLeave
+        </li>
+        <li className="interview__item">
+          <span className="interview__item_number">16)</span>
+          Composables - тоже самое что и кастомный хук в реакте. Выделение логики. Абстракция побочных эффектов, к
+          примеру размер окна. Есть библиотека VueUse (с локал стораджем и событиями AddEventListener)
+        </li>
+        <li className="interview__item">
+          <span className="interview__item_number">17)</span>
+          toRefs - Это нужно, чтобы деструктурировать реактивный объект без потери реактивности.Связь с reactive —
+          toRefs работает только с объектами, созданными reactive (не с ref).
         </li>
       </ul>
     </section>

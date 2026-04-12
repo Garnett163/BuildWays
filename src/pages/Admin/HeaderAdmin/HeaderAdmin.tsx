@@ -1,5 +1,7 @@
 import './HeaderAdmin.css';
 import { Link } from 'react-router-dom';
+// import MicroFrontendWays from '../MicroFrontendWays/MicroFrontendWays';
+import MFWrapper from '../MFWrapper/MFWrapper';
 
 function Header() {
   return (
@@ -18,6 +20,12 @@ function Header() {
               <Link to="/admin/interview" className="header__link ">
                 QA
               </Link>
+            </li>
+            <li className="header__item">
+              {/* <Link to="/admin/micro-frontend-ways" className="header__link ">
+                MF
+              </Link> */}
+              {/* <MFWrapper /> */}
             </li>
           </ul>
         </div>
