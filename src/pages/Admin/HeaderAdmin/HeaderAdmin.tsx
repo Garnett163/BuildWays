@@ -1,7 +1,5 @@
 import './HeaderAdmin.css';
 import { Link } from 'react-router-dom';
-// import MicroFrontendWays from '../MicroFrontendWays/MicroFrontendWays';
-import MFWrapper from '../MFWrapper/MFWrapper';
 
 function Header() {
   return (
@@ -22,10 +20,9 @@ function Header() {
               </Link>
             </li>
             <li className="header__item">
-              {/* <Link to="/admin/micro-frontend-ways" className="header__link ">
-                MF
-              </Link> */}
-              {/* <MFWrapper /> */}
+              <Link to="/admin/build-ways-todo" className="header__link">
+                ToDo
+              </Link>
             </li>
           </ul>
         </div>

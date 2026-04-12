@@ -15,6 +15,7 @@ import Basket from '../../pages/Basket/Basket';
 import PageNotFound from '../../pages/PageNotFound/PageNotFound';
 import ProductPage from '../../pages/ProductPage/ProductPage';
 import UserProfile from '../../pages/UserProfile/UserProfile';
+import BuildWaysTodoRoute from '../../pages/Admin/BuildWaysTodoRoute/BuildWaysTodoRoute';
 import ProtectedClientRouteElement from '../ProtectedRoute/ProtectedRoute';
 import Preloader from '../Preloader/Preloader';
 import { setCategories } from '../../redux/categorySlice';
@@ -83,6 +84,7 @@ function App() {
         <Route path="/user-profile" element={<ProtectedClientRouteElement element={<UserProfile />} />} />
         <Route path="/catalogy" element={<Catalogy />} />
         <Route path="/product" element={<ProductPage />} />
+        <Route path="/admin/build-ways-todo" element={<BuildWaysTodoRoute />} />
         {/* {isLoggedIn && currentUser?.role === 'ADMIN' && <Route path="/admin/*" element={<Admin />} />}  */}
         <Route path="/admin/*" element={<Admin />} />
         <Route path="*" element={<PageNotFound />} />

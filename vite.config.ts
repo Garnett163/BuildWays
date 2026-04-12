@@ -8,7 +8,7 @@ export default defineConfig({
     federation({
       name: 'host',
       remotes: {
-        mf: 'http://localhost:5174/assets/remoteEntry.js',
+        buildWaysTodo: 'http://localhost:4173/assets/remoteEntry.js',
       },
       shared: ['react', 'react-dom'],
     }),
@@ -16,7 +16,7 @@ export default defineConfig({
   server: {
     open: true,
   },
-  // build: {
-  //   sourcemap: true,
-  // },
+  build: {
+    sourcemap: true,
+  },
 });
