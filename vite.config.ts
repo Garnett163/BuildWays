@@ -10,7 +10,7 @@ export default defineConfig({
       remotes: {
         buildWaysTodo: 'http://localhost:4173/assets/remoteEntry.js',
       },
-      shared: ['react', 'react-dom'],
+      shared: ['react', 'react-dom', 'react-router-dom'],
     }),
   ],
   server: {

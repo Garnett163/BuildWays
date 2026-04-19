@@ -84,7 +84,7 @@ function App() {
         <Route path="/user-profile" element={<ProtectedClientRouteElement element={<UserProfile />} />} />
         <Route path="/catalogy" element={<Catalogy />} />
         <Route path="/product" element={<ProductPage />} />
-        <Route path="/admin/build-ways-todo" element={<BuildWaysTodoRoute />} />
+        <Route path="/admin/build-ways-todo/*" element={<BuildWaysTodoRoute />} />
         {/* {isLoggedIn && currentUser?.role === 'ADMIN' && <Route path="/admin/*" element={<Admin />} />}  */}
         <Route path="/admin/*" element={<Admin />} />
         <Route path="*" element={<PageNotFound />} />
