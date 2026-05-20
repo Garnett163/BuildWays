@@ -1,7 +1,7 @@
 import './HeaderAdmin.css';
 import { Link } from 'react-router-dom';
 
-function Header() {
+function HeaderAdmin() {
   return (
     <header className="header">
       <div className="header__container">
@@ -15,8 +15,13 @@ function Header() {
               <Link to="/user-profile" className="header__link header__link-profile" />
             </li>
             <li className="header__item">
-              <Link to="/admin/interview" className="header__link ">
+              <Link to="/admin/frontend-interview" className="header__link ">
                 QA
+              </Link>
+            </li>
+            <li className="header__item">
+              <Link to="/admin/hr-interview" className="header__link">
+                HR
               </Link>
             </li>
             <li className="header__item">
@@ -31,4 +36,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default HeaderAdmin;

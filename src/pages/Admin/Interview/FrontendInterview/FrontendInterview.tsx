@@ -1,71 +1,21 @@
-import './Interview.css';
+import './FrontendInterview.css';
+import { SectionTitle } from '../../Ui/SectionTitle/SectionTitle';
+import { InterviewList } from '../../Ui/InterviewList/InterviewList';
 
-function Interview() {
+import { browserAndCommonQuestions } from './data/browserAndCommonQuestions';
+import { htmlAndCssQuestions } from './data/htmlAndCssQuestions';
+import { javaScriptQuestions } from './data/javaScript';
+
+function FrontendInterview() {
   return (
-    <section className="interview">
-      <h2>Общие вопросы / Браузер</h2>
-      <ul className="interview__list">
-        <li className="interview__item">
-          <span className="interview__item_number">1)</span> Мы ввели в url строчку кода и нажали Enter, что произойдет?
-          - Браузер анализирует введенный URL, разделяя его на различные компоненты, такие как протокол (http, https, и
-          т.д.), доменное имя, путь к ресурсу, параметры запроса и фрагмент. DNS-запрос: Если доменное имя не было
-          закешировано, браузер отправляет DNS-запрос для разрешения доменного имени в IP-адрес. Установка соединения:
-          Браузер устанавливает соединение с сервером, указанным в URL, используя протокол передачи данных (обычно HTTP
-          или HTTPS).
-          <br /> Отправка HTTP-запроса: Браузер отправляет HTTP-запрос на сервер для получения нужной страницы или
-          ресурса. Обработка HTTP-ответа: Сервер обрабатывает запрос и отправляет обратно HTTP-ответ. Этот ответ может
-          содержать HTML-код для отображения в браузере, а также другие ресурсы, такие как стили, скрипты, изображения и
-          т.д.
-          <br />
-          Отображение страницы: Браузер получает ответ от сервера и отображает полученную страницу в окне браузера.
-          Выполнение JavaScript и обработка ресурсов: Если страница содержит JavaScript, браузер выполняет его. Также
-          начинается загрузка и обработка других ресурсов на странице, таких как стили, изображения, шрифты и т.д.
-        </li>
-        <li className="interview__item">
-          <span className="interview__item_number">2)</span> Протокол HTTPS - HTTPS (Hypertext Transfer Protocol Secure)
-          - это защищенная версия протокола HTTP, обеспечивающая безопасность данных. В отличие от HTTP, HTTPS
-          использует дополнительные протоколы, такие как SSL (Secure Sockets Layer) или его более современную версию TLS
-          (Transport Layer Security), для обеспечения шифрования данных между браузером и сервером. Это шифрование
-          делает данные невосприимчивыми к перехвату и изменению злоумышленниками, обеспечивая повышенный уровень
-          конфиденциальности и целостности.
-        </li>
-        <li className="interview__item">
-          <span className="interview__item_number">3)</span> Как можно хранить информацию в браузере - cookie(сервер
-          отдает, 4КБ каждый), localStorage(от 5 до 10 МБ), sessionStorage(от 5 до 10 МБ). IndexedDB – это встроенная
-          база данных, более мощная, чем localStorage. Хранит практически любые значения по ключам, несколько типов
-          ключей Поддерживает транзакции для надёжности. Поддерживает запросы в диапазоне ключей и индексы.
-        </li>
-        <li className="interview__item">
-          <span className="interview__item_number">4)</span> Что такое трехстороннее рукопожатие - Шаг 1: Отправка (SYN)
-          Клиент отправляет серверу пакет с установленным флагом SYN (Synchronize). Этот пакет указывает, что клиент
-          хочет установить соединение. Шаг 2: Подтверждение (SYN-ACK) Сервер получает пакет SYN, и, если он готов
-          установить соединение, отправляет клиенту пакет с установленными флагами SYN и ACK (Acknowledgment). Флаг SYN
-          указывает на готовность установить соединение, а флаг ACK подтверждает получение пакета SYN от клиента. Шаг 3:
-          Подтверждение (ACK) Клиент получает пакет SYN-ACK от сервера и отправляет обратно серверу пакет с
-          установленным флагом ACK. Это подтверждает серверу, что клиент получил его подтверждение, и теперь соединение
-          установлено.
-        </li>
-        <li className="interview__item">
-          <span className="interview__item_number">5)</span> Защита от XXS(Cross-site scripting) - автоматическое
-          экранирование во фрейморках. Для textarea вручную экранировать <br /> CSRF (Cross-Site Request Forgery) -
-          добавить токен/куки к запросам. <br />
-          SSTI (Server-Side Template Injection) - блокировка шаблонных сиктаксисов. <br /> XXE (XML External Entity) -
-          это уязвимость, которая позволяет атаковать приложения, обрабатывающие XML данные. Атака происходит через
-          внедрение вредоносных внешних сущностей в XML документы. <br /> LFI (Local File Inclusion) - это уязвимость,
-          позволяющая злоумышленнику читать локальные файлы на сервере через веб-приложение. <br /> RCE (Remote Code
-          Execution) - это удаленное выполнение кода на сервере. Это одна из самых опасных атак. <br /> RFI (Remote File
-          Inclusion) - это удаленное включение файлов, когда атакующий заставляет приложение загружать и выполнять файлы
-          с удаленных серверов.
-        </li>
-      </ul>
-      <h2>Вопросы по HTML/CSS</h2>
-      <ul className="interview__list">
-        <li className="interview__item">
-          <span className="interview__item_number">1)</span>
-        </li>
-      </ul>
-      <h2>Вопросы по JS</h2>
-      <ul className="interview__list">
+    <section className="frontend__interview">
+      <SectionTitle title="Общие вопросы / Браузер" />
+      <InterviewList items={browserAndCommonQuestions} />
+      <SectionTitle title="Вопросы по HTML и CSS" />
+      <InterviewList items={htmlAndCssQuestions} />
+      <SectionTitle title="JavaScript" />
+      <InterviewList items={javaScriptQuestions} />
+      {/* <ul className="interview__list">
         <li className="interview__item">
           <span className="interview__item_number">1)</span> Примитивы: null, undefined, boolean, number, string,
           symbol, bigInt. Symbol - уникальный объект, который используется для создания уникальных идентификаторов.
@@ -176,8 +126,8 @@ function Interview() {
         <li className="interview__item">
           <span className="interview__item_number">15)</span>
         </li>
-      </ul>
-      <h2>Вопросы по TypeScript</h2>
+      </ul> */}
+      <SectionTitle title="TypeScript" />
       <ul className="interview__list">
         <li className="interview__item">
           <span className="interview__item_number">1)</span>
@@ -235,7 +185,7 @@ function Interview() {
           ReturnType(Type): Извлекает тип возвращаемого значения функции.
         </li>
       </ul>
-      <h2>Вопросы по React</h2>
+      <SectionTitle title="React" />
       <ul className="interview__list">
         <li className="interview__item">
           <span className="interview__item_number">1)</span>
@@ -299,7 +249,7 @@ function Interview() {
           изменений в DOM и перед тем, как браузер выполнит перерисовку экрана.
         </li>
       </ul>
-      <h2>Вопросы по Vue</h2>
+      <SectionTitle title="Vue 2 and Vue 3" />
       <ul>
         <li className="interview__item">
           <span className="interview__item_number">1)</span>Vue 2 использует Object.defineProperty(определяет новое или
@@ -420,4 +370,4 @@ function Interview() {
   );
 }
 
-export default Interview;
+export default FrontendInterview;
