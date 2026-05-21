@@ -4,7 +4,8 @@ import { InterviewList } from '../../Ui/InterviewList/InterviewList';
 
 import { browserAndCommonQuestions } from './data/browserAndCommonQuestions';
 import { htmlAndCssQuestions } from './data/htmlAndCssQuestions';
-import { javaScriptQuestions } from './data/javaScript';
+import { javaScriptQuestions } from './data/javaScriptQuestions';
+import { typeScriptQuestions } from './data/typeScriptQuestions';
 
 function FrontendInterview() {
   return (
@@ -15,120 +16,9 @@ function FrontendInterview() {
       <InterviewList items={htmlAndCssQuestions} />
       <SectionTitle title="JavaScript" />
       <InterviewList items={javaScriptQuestions} />
-      {/* <ul className="interview__list">
-        <li className="interview__item">
-          <span className="interview__item_number">1)</span> Примитивы: null, undefined, boolean, number, string,
-          symbol, bigInt. Symbol - уникальный объект, который используется для создания уникальных идентификаторов.
-          BigInt - позволяет безопасно работать с большими числами, нельзя смешивать с number, поддерживает только
-          целочисленные операции.
-        </li>
-        <li className="interview__item">
-          <span className="interview__item_number">2)</span> Prototype - Есть только у функций-конструкторов и классов,
-          хранит методы и свойства для наследования, используется для создания через new. __proto__ - есть у всех
-          объектов и хранит методы и свойства для наследования. Object.getPrototypeOf() - возвращает прототип объекта.
-        </li>
-        <li className="interview__item">
-          <span className="interview__item_number">1)</span> Замыкание - Функция сохраняет доступ к переменным из своего
-          внешнего контекста, даже после завершения выполнения этого контекста. Замыкания часто используются для
-          создания частных переменных, создания функций с сохраненными контекстами или передачи данных между функциями
-          без использования глобальных переменных. Полезно для Инкапсуляция — скрываем внутреннюю реализацию, Сохраняем
-          состояние между вызовами функции.
-        </li>
-        <li className="interview__item">
-          <span className="interview__item_number">2)</span> Event Loop - Это концепция выполнения асинхронного кода в
-          браузере, потому что JS является однопоточным. Задачи поподают в CallStack и выполняются по очереди. Первым
-          делом весь синхронный код, потом МикроТаски(Промисы), потом МакроТаски(SetInterval, SetTimeout).
-        </li>
-        <li className="interview__item">
-          <span className="interview__item_number">3)</span> Context this - это всегда значение ключевого слова this,
-          которое является ссылкой на объект, который запустил метод (функцию).Значение this зависит от того, как
-          вызывается функция, и оно может быть определено неявно или явно. Неявный контекст - Если функция вызывается
-          как метод объекта, то this будет ссылаться на сам объект, к которому принадлежит метод. Явный контекст -
-          Методы call, apply и bind позволяют явно задать значение this для функции. Глобальный - ссылается на window
-        </li>
-        <li className="interview__item">
-          <span className="interview__item_number">4)</span> Что такое всплытие или хостинг - Всплытие (hoisting) в
-          JavaScript - это механизм, при котором объявления переменных и функций перемещаются вверх по коду перед
-          выполнением самого кода. Таким образом, даже если переменная или функция определены позже в коде, они могут
-          быть использованы до своего фактического объявления.
-        </li>
-        <li className="interview__item">
-          <span className="interview__item_number">5)</span> Методы, call, apply, bind - Функции которые привязывают
-          контекст вызова this. Call вызывается с аргументами через запятую. Apply, аргументы передаются с помощью
-          массива. Bind - Создает новую функцию, что важно не вызывает ее сразу.
-        </li>
-        <li className="interview__item">
-          <span className="interview__item_number">6)</span> Копирование объектов - Есть поверхностное копирование и
-          глубокое. При поверхностном, мы скопируем первый слой ключей, вложенные будут отображаться как object и иметь
-          ссылки на первый объект Spread оператор (...) или Object.assign(). Глубокое копирование можно реализовать с
-          помощью JSON.parse(JSON.stringify(object)), но не поддерживает вложенные функции, выведет function or null.
-          Глубокое копирование стало возможным с помощью функции structuredClone!!
-        </li>
-        <li className="interview__item">
-          <span className="interview__item_number">7)</span> Set и Map - Set - новый тип данных который позволяет
-          хранить уникальные значения, там можно хранить практически все типы данных, удаляет повторяющиеся элементы, и
-          имеет встроенные свойства. Map - это структура данных, представляющая собой коллекцию пар ключ-значение, где
-          ключи и значения могут быть любого типа. В отличие от объектов, ключами в Map могут быть любые значения,
-          включая и объекты.
-        </li>
-        <li className="interview__item">
-          <span className="interview__item_number">8)</span> Rest and Spread - Rest позволяет собирать оставшиеся
-          аргументы функции или оставшиеся элементы массива в один массив. В функциях он используется в параметрах, а в
-          массивах - при объявлении или деструктуризации. Spread Она используется для распаковки элементов массива или
-          свойств объекта. Это позволяет создавать копии массивов, объединять массивы, копировать объекты и т.д.
-        </li>
-        <li className="interview__item">
-          <span className="interview__item_number">9)</span> Throttling and debouncing - это два популярных подхода к
-          управлению частотой выполнения функций в ответ на события, такие как прокрутка страницы или изменение размеров
-          окна браузера. Throttling ограничивает частоту выполнения функции, обеспечивая, чтобы она не выполнялась
-          слишком часто. Debouncing также управляет частотой выполнения функции, но в отличие от троттлинга, он
-          откладывает выполнение функции до тех пор, пока не пройдет определенный промежуток времени без событий.
-          Например, если у вас есть функция, реагирующая на изменение размера окна, дебаунсинг позволит выполнить эту
-          функцию, например, через 300 миллисекунд после последнего изменения размера окна.
-        </li>
-        <li className="interview__item">
-          <span className="interview__item_number">10)</span> Web Workers - это механизм веб-платформы, который
-          позволяет выполнять скрипты в фоновом потоке, отдельном от основного потока выполнения веб-страницы. Основная
-          идея в том, чтобы выполнять тяжелые вычисления или задачи, которые могут занять много времени, в фоновом
-          режиме, чтобы не блокировать пользовательский интерфейс.
-        </li>
-        <li className="interview__item">
-          <span className="interview__item_number">11)</span> Чистая функция - Однозначность (Deterministic): Для одних
-          и тех же входных данных функция всегда возвращает одинаковый результат. Нет никаких скрытых состояний или
-          побочных эффектов, которые могли бы изменять вывод функции. Отсутствие побочных эффектов (No Side Effects):
-          Функция не должна влиять на внешнюю среду. Это означает, что она не изменяет переменные вне своей области
-          видимости, не вызывает запросы к серверу, не взаимодействует с базой данных и т. д. Пример Reducer!!
-        </li>
-        <li className="interview__item">
-          <span className="interview__item_number">12)</span> Методы массивов, Новые которые иммутабельные - toSorted(),
-          toReversed(),toSpliced(), with(index, value) - Он возвращает новый массив, в котором элемент по заданному
-          индексу заменен заданным значением. Slice тоже иммутабельный.
-        </li>
-        <li className="interview__item">
-          <span className="interview__item_number">13)</span> requestAnimationFrame - это метод в JavaScript, который
-          используется для планирования выполнения анимаций и других задач, связанных с обновлением интерфейса в
-          браузере. Он обеспечивает плавное выполнение анимаций и оптимизирует использование ресурсов, связанных с
-          отрисовкой.
-        </li>
-        <li className="interview__item">
-          <span className="interview__item_number">14)</span>
-          Методы Promise - Promise.all(iterable) - возвращает новый Promise, который разрешается, когда все переданные
-          промисы в массиве разрешаются, или отклоняется, если хотя бы один из них отклоняется.
-          <br></br>
-          Promise.race(iterable) - возвращает новый Promise, который разрешается или отклоняется по результату самого
-          быстрого из переданных промисов.
-          <br></br>
-          Статические методы: Promise.allSettled(iterable) - возвращает новый Promise, который разрешается, когда все
-          переданные промисы в массиве завершены (разрешены или отклонены). Promise.any(iterable) - возвращает новый
-          Promise, который разрешается, когда хотя бы один из переданных промисов разрешается, или отклоняется, если все
-          промисы отклоняются.
-        </li>
-        <li className="interview__item">
-          <span className="interview__item_number">15)</span>
-        </li>
-      </ul> */}
       <SectionTitle title="TypeScript" />
-      <ul className="interview__list">
+      <InterviewList items={typeScriptQuestions} />
+      {/* <ul className="interview__list">
         <li className="interview__item">
           <span className="interview__item_number">1)</span>
           JS слабая типизаци, в ран тайме, TS-сложная и статическая(на этапе компиляции) + структурная (одинаковые поля)
@@ -184,7 +74,7 @@ function FrontendInterview() {
           <br></br>
           ReturnType(Type): Извлекает тип возвращаемого значения функции.
         </li>
-      </ul>
+      </ul> */}
       <SectionTitle title="React" />
       <ul className="interview__list">
         <li className="interview__item">
