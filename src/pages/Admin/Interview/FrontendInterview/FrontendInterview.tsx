@@ -6,6 +6,8 @@ import { browserAndCommonQuestions } from './data/browserAndCommonQuestions';
 import { htmlAndCssQuestions } from './data/htmlAndCssQuestions';
 import { javaScriptQuestions } from './data/javaScriptQuestions';
 import { typeScriptQuestions } from './data/typeScriptQuestions';
+import { reactQuestions } from './data/reactQuestions';
+import { vueQuestions } from './data/vueQuestions';
 
 function FrontendInterview() {
   return (
@@ -18,87 +20,9 @@ function FrontendInterview() {
       <InterviewList items={javaScriptQuestions} />
       <SectionTitle title="TypeScript" />
       <InterviewList items={typeScriptQuestions} />
-      {/* <ul className="interview__list">
-        <li className="interview__item">
-          <span className="interview__item_number">1)</span>
-          JS слабая типизаци, в ран тайме, TS-сложная и статическая(на этапе компиляции) + структурная (одинаковые поля)
-        </li>
-        <li className="interview__item">
-          <span className="interview__item_number">2)</span> Generic - аргумент для типа функции интерфейса, дает
-          гибкость. Пример - useState
-        </li>
-        <li className="interview__item">
-          <span className="interview__item_number">3)</span>
-          Различие между type и interface - type - можно указывать литералы и явное значение, ункальное
-          название.interface - можно делать extends, производительность лучше чем у type с пересечением
-        </li>
-        <li className="interview__item">
-          <span className="interview__item_number">4)</span>
-          Mapped types позволяет создовать типы на основе существующих, путем трансформации их свойств.
-        </li>
-        <li className="interview__item">
-          <span className="interview__item_number">5)</span>
-          Assert — это statement, который проверяет булево выражение. Если выражение истинно, выполнение продолжается.
-          Если ложно — выбрасывается ошибка.
-        </li>
-        <li className="interview__item">
-          <span className="interview__item_number">6)</span>
-          Infer - вытащить параметр или return тип из функции.
-        </li>
-        <li className="interview__item">
-          <span className="interview__item_number">7)</span>
-          TypeGuard - это функция которая возвращает true или false в зависимости от проверки типа. Имеет специальный
-          тип возврата value is Type
-        </li>
-        <li className="interview__item">
-          <span className="interview__item_number">8)</span>
-          Utility Types: ----
-          <br></br>
-          Partial(Type) Создает тип, который делает все свойства указанного типа необязательными, помечая их как ?.
-          <br></br>
-          Required(Type): Создает тип, который делает все свойства указанного типа обязательными путем удаления ? из
-          всех свойств.
-          <br></br>
-          Readonly(Type): Создает тип, который делает все свойства указанного типа доступными только для чтения.
-          <br></br>
-          Pick(Type, Keys): Создает тип, содержащий только указанные свойства из исходного типа.
-          <br></br>
-          Record(Keys, Type): Создает тип, представляющий объект, где ключи типа Keys имеют тип Type.
-          <br></br>
-          Exclude(Type, ExcludedUnion): Создает тип, исключая из него все члены, которые являются подтипами
-          ExcludedUnion.
-          <br></br>
-          Omit(Type, Keys): Создает тип, исключая из него указанные свойства.
-          <br></br>
-          NonNullable(Type): Создает тип, исключая null и undefined из указанного типа.
-          <br></br>
-          ReturnType(Type): Извлекает тип возвращаемого значения функции.
-        </li>
-      </ul> */}
       <SectionTitle title="React" />
-      <ul className="interview__list">
-        <li className="interview__item">
-          <span className="interview__item_number">1)</span>
-          JSX - это расширение синтаксиса для JavaScript, которое позволяет вам писать HTML-подобный код прямо внутри
-          JavaScript-файлов. React экранирует все значения, встроенные в JSX, перед тем как отрендерить их. Это
-          означает, что невозможно внедрить XSS-атаки путем простой вставки пользовательского контента. Компиляция в
-          эффективный код.
-        </li>
-        <li className="interview__item">
-          <span className="interview__item_number">2)</span>
-          Классовые компоненты — это ES6-классы, которые расширяют React.Component и используют методы жизненного цикла.
-          Функциональные компоненты — это обычные JavaScript-функции, которые возвращают JSX.
-        </li>
-        <li className="interview__item">
-          <span className="interview__item_number">3)</span>
-          Props (properties) — это входные параметры, которые компонент получает от родительского компонента. Их можно
-          сравнить с аргументами функции. Если дочерний компонент изменяет props, это создает: непредсказуемое
-          поведение, нарушение архитектуры React. Потеря оптимизаций — нарушение поверхностного сравнения
-        </li>
-        <li className="interview__item">
-          <span className="interview__item_number">4)</span>Без ключей React перерисовывает весь список при любом
-          изменении. С ключами React понимает, какой именно элемент изменился, и обновляет только его.
-        </li>
+      <InterviewList items={reactQuestions} />
+      {/* <ul className="interview__list">
         <li className="interview__item">
           <span className="interview__item_number">5)</span> Fiber - когда у нас впервые строится дерево реакт
           элементов, то для каждого элемента впервые создается Fiber Noda
@@ -113,34 +37,16 @@ function FrontendInterview() {
           За счет этих правил сложность O(n)
         </li>
         <li className="interview__item">
-          <span className="interview__item_number">7)</span> Оптимизация в React(кеширование)-
-        </li>
-        <li className="interview__item">
           <span className="interview__item_number">8)</span> Расскажи про хуки в React
           <br />
           useEffect это хук в React, который предназначен для выполнения side-эффектов в функциональных компонентах.
           Side-эффекты могут быть, например, выполнение запросов HTTP, изменение состояний компонента или обновление
           DOM-элементов.
-        </li>
-        <li className="interview__item">
-          <span className="interview__item_number">9)</span> useRef - Предназначен для сохранения и взаимодействия с
-          изменяемыми значениями, которые не вызывают перерендеринг компонента.Хранение мутабельных значений: Вы можете
-          использовать useRef для хранения переменных, которые не приводят к повторному рендерингу компонента. Часто
-          используется для сохранения ссылок на DOM-элементы.
-        </li>
-        <li className="interview__item">
-          <span className="interview__item_number">10)</span> useEffect - это хук в React, который предназначен для
-          выполнения side-эффектов в функциональных компонентах. Side-эффекты могут быть, например, выполнение запросов
-          к серверу, манипуляции с DOM, подписка на события или любые другие операции, которые необходимо выполнить в
-          процессе жизненного цикла компонента.
-        </li>
-        <li className="interview__item">
-          <span className="interview__item_number">11)</span> uselayoutEffect - Cрабатывает синхронно после всех
-          изменений в DOM и перед тем, как браузер выполнит перерисовку экрана.
-        </li>
-      </ul>
+        </li>                   
+      </ul> */}
       <SectionTitle title="Vue 2 and Vue 3" />
-      <ul>
+      <InterviewList items={vueQuestions} />
+      {/* <ul>
         <li className="interview__item">
           <span className="interview__item_number">1)</span>Vue 2 использует Object.defineProperty(определяет новое или
           изменяет существующее свойство объекта и возвращает этот объект.) с ограничениями. Object.defineProperty
@@ -255,7 +161,7 @@ function FrontendInterview() {
           toRefs - Это нужно, чтобы деструктурировать реактивный объект без потери реактивности.Связь с reactive —
           toRefs работает только с объектами, созданными reactive (не с ref).
         </li>
-      </ul>
+      </ul> */}
     </section>
   );
 }
