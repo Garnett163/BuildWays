@@ -2,11 +2,11 @@ import { configureStore } from '@reduxjs/toolkit';
 import authReducer from './authSlice';
 import categorySlice from './categorySlice';
 import productSlice from './productSlice';
+import errorSlice from './errorSlice';
+import themeSlice from './themeSlice';
 import { authApi } from '../Api/authApi';
 import { categoryApi } from '../Api/categoryApi';
 import { productApi } from '../Api/productApi';
-
-import errorSlice from './errorSlice';
 
 export const store = configureStore({
   reducer: {
@@ -14,6 +14,7 @@ export const store = configureStore({
     auth: authReducer,
     categories: categorySlice,
     products: productSlice,
+    theme: themeSlice,
     [authApi.reducerPath]: authApi.reducer,
     [categoryApi.reducerPath]: categoryApi.reducer,
     [productApi.reducerPath]: productApi.reducer,

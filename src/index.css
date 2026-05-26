@@ -8,10 +8,22 @@
   box-sizing: border-box;
 }
 
+[data-theme='light'] {
+  --bg-primary: #f2f5f7;
+  --color-primary: #000;
+}
+
+[data-theme='dark'] {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2d2d2d;
+  --color-primary: #fff;
+}
+
 :root {
-  background-color: #f2f5f7;
+  background-color: var(--bg-primary);
+  color: var(--color-primary);
+  transition: all 0.3s ease;
   font-family: 'Raleway', 'Arial', sans-serif;
-  color: #000;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;

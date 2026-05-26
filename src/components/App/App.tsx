@@ -1,6 +1,7 @@
 import './App.css';
 import { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { useTheme } from '../../hooks/useTheme';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import { setUser } from '../../redux/authSlice';
 import { useGetUserProfileQuery } from '../../Api/authApi';
@@ -22,6 +23,7 @@ import { setCategories } from '../../redux/categorySlice';
 import { setProducts } from '../../redux/productSlice';
 
 function App() {
+  useTheme();
   const dispatch = useAppDispatch();
   const {
     data: userProfileData,

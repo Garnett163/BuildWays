@@ -1,11 +1,13 @@
 import './HeaderAdmin.css';
 import { Link } from 'react-router-dom';
+import ThemeToggleButton from '../Ui/ThemeToggleButton/ThemeToggleButton';
 
 function HeaderAdmin() {
   return (
     <header className="header">
       <div className="header__container">
         <Link to="/" className="header__logo" />
+        <ThemeToggleButton />
         <div className="header__links">
           <Link to="/admin" className="header__title">
             Админ панель

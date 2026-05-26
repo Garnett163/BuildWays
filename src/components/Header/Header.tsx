@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import './Header.css';
 import Navigation from '../Navigation/Navigation';
+import ThemeToggleButton from '../../pages/Admin/Ui/ThemeToggleButton/ThemeToggleButton';
 import { useAppSelector } from '../../hooks/redux';
 
 function Header() {
@@ -9,7 +10,8 @@ function Header() {
   return (
     <header className="header">
       <div className="header__container">
-        <a href="/" className="header__logo"></a>
+        <Link to="/" className="header__logo" />
+        <ThemeToggleButton />
         <ul className="header__list">
           <li className="header__item">
             <Link to="/admin" className="header__link header__link-admin">
