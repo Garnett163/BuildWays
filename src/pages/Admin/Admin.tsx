@@ -9,6 +9,7 @@ import Feedback from './Feedback/Feedback';
 
 import FrontendInterview from './Interview/FrontendInterview/FrontendInterview';
 import HRInterview from './Interview/HRInterview/HRInterview';
+import SystemDesignInterview from './Interview/SystemDesignInterview/SystemDesignInterview';
 
 function Admin() {
   const location = useLocation();
@@ -27,6 +28,7 @@ function Admin() {
           <Route path="/feedback" element={<Feedback />} />
           <Route path="/frontend-interview" element={<FrontendInterview />} />
           <Route path="/hr-interview" element={<HRInterview />} />
+          <Route path="/system-design-interview" element={<SystemDesignInterview />} />
         </Routes>
       </main>
       <FooterAdmin />

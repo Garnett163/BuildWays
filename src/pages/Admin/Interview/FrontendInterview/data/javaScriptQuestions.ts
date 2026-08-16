@@ -95,4 +95,12 @@ export const javaScriptQuestions = [
     answer:
       'Временная мёртвая зона (Temporal Dead Zone, TDZ) — это период, когда переменная, объявленная через let или const, уже существует в своей области видимости, но доступ к ней запрещён до момента объявления.',
   },
+  {
+    id: 17,
+    question: 'AbortController?',
+    answer: `Это встроенный API браузера, который позволяет отменить асинхронную операцию.
+     const controller = new AbortController(); у него есть свойство controller.signal которое передается в fetch
+     если нужно отменить то controller.abort();
+    `,
+  },
 ];

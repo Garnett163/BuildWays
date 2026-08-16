@@ -26,6 +26,11 @@ function HeaderAdmin() {
                 HR
               </Link>
             </li>
+            <li className="header__item header__text_center">
+              <Link to="/admin/system-design-interview" className="header__link">
+                System Design
+              </Link>
+            </li>
             <li className="header__item">
               <Link to="/admin/build-ways-todo" className="header__link">
                 ToDo
