@@ -2,6 +2,7 @@ import './FrontendInterview.css';
 import { InterviewSideNavigation } from '../../Ui/InterviewSideNavigation/InterviewSideNavigation';
 import { SectionTitle } from '../../Ui/SectionTitle/SectionTitle';
 import { InterviewList } from '../../Ui/InterviewList/InterviewList';
+// import TestVirtual from './testVirtual';
 
 import { navigationItems } from './constants';
 
@@ -28,6 +29,7 @@ function FrontendInterview() {
       <InterviewList items={reactQuestions} />
       <SectionTitle title="Vue 2 and Vue 3" id="vueQuestions" />
       <InterviewList items={vueQuestions} />
+      {/* <TestVirtual /> */}
     </section>
   );
 }
