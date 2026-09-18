@@ -31,9 +31,9 @@ export const javaScriptQuestions = [
   },
   {
     id: 6,
-    question: 'Что такое всплытие или хостинг? / Event Bubbling / Capturing',
+    question: 'Что такое всплытие или хостинг?',
     answer:
-      'Всплытие (hoisting) - это механизм, при котором движок JavaScript на этапе компиляции резервирует память под объявления переменных и функций до выполнения кода. var и Function Declaration всплывают полностью и их можно вызвать до объявления. А с Function Expression / Arrow Functions и let, const вызов приведет к ошибке. Event Bubbling - это фаза распространения DOM-события которое идет вверх по DOM-дереву к его родителям. Всплытие можно остановить с помощью: event.stopPropagation(). Event Capturing — фаза распространения события в обратном направлении: событие идёт сверху по DOM-дереву к элементу, на котором оно произошло. element.addEventListener("click", handler, { capture: true })',
+      'Всплытие (hoisting) - это механизм, при котором движок JavaScript на этапе компиляции резервирует память под объявления переменных и функций до выполнения кода. var и Function Declaration всплывают полностью и их можно вызвать до объявления. А с Function Expression / Arrow Functions и let, const вызов приведет к ошибке.',
   },
   {
     id: 7,
@@ -105,25 +105,26 @@ export const javaScriptQuestions = [
   },
   {
     id: 18,
-    question: 'AbortController?',
-    answer: `Это встроенный API браузера, который позволяет отменить асинхронную операцию.
-     const controller = new AbortController(); у него есть свойство controller.signal которое передается в fetch
-     если нужно отменить то controller.abort();
-    `,
-  },
-  {
-    id: 19,
     question: 'ResizeObserver и IntersectionObserver',
     answer: `IntersectionObserver - Пересекается ли элемент с viewport или другим заданным контейнером (lazy loading, infinity scroll).
     ResizeObserver - позволяет подписаться на изменение размеров DOM-элемента. (пример с демонстрацией экрана)
     `,
   },
   {
-    id: 20,
+    id: 19,
     question: 'Оптимизация в V8',
     answer: `Hidden Classes - описывают внутреннюю структуру объектов и помогают движку ускорять доступ к свойствам. Одинаковая структура однотипных объектов облегчает оптимизацию.
     Inline Caching - ускоряет повторяющиеся операции, запоминая структуру встречавшихся объектов и подходящий способ доступа к их свойствам.
     Function Inlining - оптимизация происходит во внутреннем представлении и машинном коде.
+    `,
+  },
+  {
+    id: 20,
+    question: 'События в JS',
+    answer: `1. Capturing phase — погружение 
+    2. Target phase  — событие дошло до target
+    3. Bubbling phase — всплытие 
+    Event Bubbling - это фаза распространения DOM-события которое идет вверх по DOM-дереву к его родителям. Всплытие можно остановить с помощью: event.stopPropagation(). Event Capturing — фаза распространения события в обратном направлении: событие идёт сверху по DOM-дереву к элементу, на котором оно произошло. element.addEventListener("click", handler, { capture: true })
     `,
   },
   {
